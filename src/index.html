@@ -1,0 +1,61 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="app">
+
+            <h2 class="centered">{{ title }}</h2>
+          
+            <div class="game-area">
+          
+                  <div class="player-area">
+                      <div class="col player">
+                  <h2>Player</h2>
+                  <div class="progress-bar-bg">
+                      <div :style="{width: playerBar}" class="player-bar"></div>
+                  </div>
+                </div>
+          
+                <div class="col monster">
+                  <h2>Monster</h2>
+                  <div class="progress-bar-bg">
+                      <div :style="{width: monsterBar}" class="monster-bar"></div>
+                  </div>
+                      </div>
+                  </div>
+          
+          
+              <div class="start-area">
+                      <div v-if="!started" class="start">
+                          <button @click="toggleStart" class="btn">
+                              Start Game
+                          </button>
+                      </div>
+                      <div v-else class="started">
+                          <button @click="attack" class="btn">Attack</button>
+                          <button @click="specialAttack" class="btn">Special Attack</button>
+                          <button class="btn">Heal</button>
+                          <button class="btn" @click="restartGame">Give up</button>
+                      </div>
+              </div>
+          
+                  <div class="game-log">
+                      <h3>Game Log</h3>
+                      <ul>
+                          <li v-for="hit in hitLog">{{ hit }}</li>
+                      </ul>
+                  </div>
+          
+              </div>
+          
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+          <script src="app.js"></script>
+
+    </body>
+</html>
+
+

@@ -1,0 +1,56 @@
+#app {
+	width: 80%;
+	margin: 0 auto;
+	font-family: sans-serif;
+}
+
+.player-area, .start-area, .game-log {
+	width: 100%;
+	min-height: 40px;
+	text-align: center;
+	margin-bottom: 40px;
+	clear: both;
+}
+
+.start-area, .game-log {
+	box-shadow: 2px 2px 2px 2px #ccc;
+}
+
+.game-log h3 {
+	padding-top: 1em;
+}
+
+.btn {
+	margin: 25px auto;
+	font-size: .8em;
+	font-family: sans-serif;
+	background-color: #0288D1;
+	padding: 5px 8px;
+	border-radius: 4px;
+}
+
+.col {
+	width: 50%;
+	margin: 0 auto;
+	float: left;
+}
+
+.centered {
+	text-align: center;
+}
+
+.progress-bar-bg {
+	height: 25px;
+	background-color: #efefef;
+	margin: 10px 20px;
+}
+
+.player-bar, .monster-bar {
+	height: 25px;
+	background-color: green;
+}
+
+ul li {
+	list-style-type: none;
+	padding: 3px 0;
+}
