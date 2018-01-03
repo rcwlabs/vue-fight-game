@@ -6,6 +6,7 @@ new Vue({
           playerHealth: 100,
           monsterHealth: 100,
           specialCounter: 0,
+          healCounter: 0,
           hitLog: []
     },
       methods: {
@@ -34,12 +35,26 @@ new Vue({
                   alert('You have used your special attacks!');
               }
           },
+          heal: function() {
+            if (this.healCounter < 3) {
+                let randHeal = Math.floor((Math.random() * 8) + 1);
+                let smallHit = Math.floor((Math.random() * 5) + 1);
+                this.playerHealth += randHeal;
+                this.hitLog.unshift('Player healed: ' + randHeal);
+                this.playerHealth -= smallHit;
+                this.hitLog.unshift('Monster hit Player: ' + smallHit);
+                this.healCounter++;
+            } else {
+                alert('You have used your heal spells!');
+            }
+          },
           restartGame: function() {
               this.toggleStart();
               this.hitLog = [];
               this.playerHealth = 100;
               this.monsterHealth = 100;
               this.specialCounter = 0;
+              this.healCounter = 0;
           }
       },
       computed: {
