@@ -49,5 +49,19 @@ new Vue({
           playerBar: function() {
               return this.playerHealth + '%';
           }
+      },
+      watch: {
+          playerHealth: function() {
+              if (this.playerHealth < 1) {
+                  alert('You LOST!');
+                  this.restartGame();
+              }
+          },
+          monsterHealth: function() {
+            if (this.monsterHealth < 1) {
+                alert('You WON!');
+                this.restartGame();
+            }
+        }
       }
   });
