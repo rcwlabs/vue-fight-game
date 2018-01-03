@@ -48,9 +48,16 @@
 .player-bar, .monster-bar {
 	height: 25px;
 	background-color: green;
+	font-size: 1.2em;
+	font-weight: 600;
 }
 
 ul li {
 	list-style-type: none;
 	padding: 3px 0;
+}
+
+.health-text {
+	display: inline-block;
+	padding-top: 4px;
 }
